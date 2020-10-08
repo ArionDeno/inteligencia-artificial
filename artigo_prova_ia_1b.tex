@@ -1,0 +1,266 @@
+%   Universidade Tuiuti Do Paraná      
+%   Ciencia da Computação
+%   Inteligencia Artficial
+%   Professor: CHAUA COLUENE QUEIROLO BARBOSA DA SILVA
+%   Aluno: Arion Denovaro
+%-------------------------------------------------------
+% 
+
+% tipo de documento artigo
+\documentclass[12pt,a4paper,twocolumn]{article}
+
+%Blibiotecas 
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[caption=false]{subfig}
+\usepackage{graphicx} %use de imgs
+\usepackage{natbib}
+\usepackage{hyperref}
+
+\title{Analise de Estrategias de busca aplicada a Inteligencia Artificial}
+\date{30/09/2020}
+\author{Arion Denovaro  \\ \texttt  arion.barberi@utp.edu.br}
+
+%-------incio-do-artigo-------------------
+\begin{document}
+\maketitle
+% cria uma pagina em branco 
+\newpage  
+%descrevendo a resolução,
+%por meio de estratégias de busca, 
+
+
+%-------------------
+\section{Introdução}
+%-----------------------------
+  	Desde tempos remotos sempre surgiu problemas na humanidade, inicialmente sendo na questão de sobrevivência, seja como: Alimentação, Abrigo, Saúde.	
+
+	Com o passar  de eras, o homem conseguiu domar a natureza furiosa através da compreensão de seus mistérios, pode-se revelar um fantástico mundo oculto, desconhecido a ser descoberto, com doses de engenhosos artifícios simples, a natureza nos revelou que fazemos parte dela de uma forma mais sistemática e cultural, quanto gostaríamos.
+
+	Mas passamos a interferir de tal modo que estamos causando mais problemas à natureza que nossos ancestrais, e com isso causando secas, desequilíbrios ambientais, sociais e doenças. 
+
+	Não podemos nos distanciar da natureza e esquecer que somos parte dela, e por isso dependemos dela. Isso nos fez aprender e aplicar tais conhecimentos para desenvolvimento daquilo que chamamos de ciência, com a finalidade de melhorar nossas chances de sobrevivência.
+
+
+%###################
+
+%-------------------
+\section{Fundamentação Téorica}
+%-----------------------------
+A inteligência artificial é uma área da computação que começou a surgir já no incio da informática, com o objetivo de tentar tornar o computador mais inteligente, poder tomar decisões mais eficientes para que com isso possa resolver problemas que até então não poderiam ser resolvidos, como: achar a saída de um labirinto, interpretar a fala humana, identificar objetos, interagir e responder humanos, entre outros.
+
+ 
+%###################
+
+%-------------------
+\section{Cubo de Rubik}
+%-------------------
+
+%_________
+\subsection{Introdução}
+Cubo mágico, é um quebra-cabeça tridimensional, que procura mexer as faces do cubo de 3x3 (ou mais), de modo que cada face fique ordenado com uma única cor, por esse motivo o cubo mágico é um problema de ordenação auxiliado por uma de busca uniforme, uma IA conseguiria resolver o mesmo. Pois
+deve-se buscar as posições e os dados, tanto largura como em profundidade., fazendo buscas para validar e verificar se a posição, ou os movimentos leva a 
+a colocação da cor no quadrante adequado. Para isso deve-se esgotar as possibilidades e para isso a busca uniforme se encaixa adequadamente.
+
+
+%-----------------------------------
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=4cm]{cubo1.jpg}
+   \caption{Figura Cubo magico}
+   \label{fig:cubo1} 
+\end{figure}
+%----------------------------------------
+	
+%_________
+\subsection{Estado Inicial}
+O Cubo estará desorganizado, com as cores embaralhadas, de forma aleatória.
+
+%-----------------------------------
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=4cm]{cubo2.jpg}
+   \caption{Figura Cubo magico embaralhado}
+   \label{fig:cubo2} 
+\end{figure}
+%----------------------------------------
+
+%_________
+\subsection{Ações}
+Rotacionar linhas das faces, na horizontal, vertical, virar o cubo.
+%_________
+\subsection{Modelo de Transição}
+  \textbf{rotacionar as faces}:Girar qualquer uma das linhas externas, tanto na horizontal, vertical, em 90 graus, tanto rotação horaria quanto anti-horaria.
+
+
+
+%-----------------------------------
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=4cm]{cubo3.jpg}
+   \caption{Figura Cubo magico ações}
+   \label{fig:cubo3} 
+\end{figure}
+%----------------------------------------
+
+ \textbf{virar cubo}:  Virar o cubo em qualquer ângulo de 360 graus, normalmente se matem uma face com ângulo de 90 graus para Y-, para se manter a orientação visual, dispondo-se de modo que fique 3 faces visíveis.
+%_________
+\subsection{Custo de Caminho}
+A menor quantidade de movimentos para resolver o cubo é de 28 movimentos aproximadamente.
+
+%_________
+\subsection{Teste do Objetivo}
+As faces da cor que mudou de posição ao final, pertence a mesma cor da face que fica no meio?
+Se Sim, movimento válido, caso contrário será movimento desnecessário.
+
+
+%###################
+
+%-------------------
+\section{Missionários e Canibais}
+%-------------------
+%_________
+\subsection{Introdução}
+O problema dos missionários e canibais é um problema de ordenação, onde 3 canibais e 3 missionários estão viajando, para atravessar um rio, possuem de uma jangada que suporta somente no máximo 2 ocupantes por vez, não se pode exceder a quantidade de canibais em ambas as margens ou os missionários estarão em risco. Deve-se então organizar a travessia de modo que o número de canibais sempre seja menor ou igual aos números missionários, tal problema está classificado como de busca em largura, pois deve-se analisar os nos próximos, para estar em harmonia. Tal problema pode-se ser solucionado por busca em largura, que visa analisar a situação de forma de uma fila, verificando para ver quais escolhas são as mais adequadas. 
+
+
+%_________
+\subsection{Estado Inicial}
+   Em uma das margens do rio, estão 3 missionários e 3 canibais, e o barco para no máximo 2 pessoas, do outro lado do rio está vazio a margem.
+
+%_________
+\subsection{Ações}
+Colocar ocupantes no barco, mover barco para outra margem.
+
+
+%_________
+\subsection{Modelo de Transição}
+ \textbf{colocar uma ou duas pessoas no barco}: pode-se escolher para colocar no barco qualquer um tanto faz ser missionário ou canibal, lembrando que o barco não pode ficar vazio, pois não opera de forma autônoma.
+
+
+
+\textbf{colocar uma ou duas pessoas na margem}: permite-se colocar uma ou duas pessoas na margem em que o barco está.
+
+
+\textbf{travesia do barco}:O barco atravessa para a margem oposta que está.
+
+%_________
+\subsection{Custo de Caminho}
+O menor número de movimentos para resolver o problema é de 11 travessias.
+
+%_________
+\subsection{Teste do Objetivo}
+ Quando todos os 6 membros da estiverem na outra margem.
+
+
+%###################
+
+
+%-------------------
+\section{Problema das $n$ rainhas}
+%-------------------
+%_________
+\subsection{Introdução}
+O problema das $n$ rainhas, é um problema que pode ser usado para se representar conflito de processos em computação paralela, onde as rainhas não podem se atacar, explorando todas as possibilidades que isso acontece. 	A solução para tal problema está na disposição das mesmas, no tabuleiro, colocando de forma não paralela e alternada entre as pistas. Para tal solução a inteligência artificial teria que ser implementada com algoritmos de ordenação por espaço como o A* usando-se busca uniforme, para analisar os casos.
+
+
+%-----------------------------------
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=4cm]{nrainhas1.png}
+   \caption{Figura demostração do problema}
+   \label{fig:nrainhas1} 
+\end{figure}
+%----------------------------------------
+
+%_________
+\subsection{Estado Inicial}
+ O tabuleiro estará vazio, não tendo outras peças a não ser as rainhas.
+
+
+%_________
+\subsection{Ações}
+ \textbf{ mover: em qualquer quantidade de casas nas direções} : Frente, trás, esquerda, direita, e diagonais.
+%_________
+\subsection{Modelo de Transição}
+    Mover as peças, 1 turno por vez.
+
+%_________
+\subsection{Custo de Caminho}
+  14 rainhas --> 365596 soluções
+%_________
+\subsection{Teste do Objetivo}
+ Quando estiver a quantidade máxima de rainhas no tabuleiro, sem que elas se ataquem.
+
+%###################
+
+%-------------------
+\section{Sudoku}
+%-------------------
+
+%_________
+\subsection{Introdução}
+	O Sudoku é um jogo relativamente simples, mas complexo similar a palavra cruzada, no qual deve-se colocar números de 1 – 9, em quadrados, de modo que não se repitam, na vertical e na horizontal, e dentro do próprio quadrado. É um bom exercício de lógica e de muita concentração, pois deve-se verificar essas 3 situações simultaneamente, o tabuleiro e os quadrantes já possuem um alguns números pré definidos, o jogador só tem que colocar os números respeitando essas regras, oque claramente demostra um problema de ordenação, aliado a busca uniforme, pois deve-se chegar de forma ordenada, tanto horizontal, quanto a vertical, e ainda o quadrante, oque demostra que é a melhor escolha, respeita a estrutura do jogo.
+%_________
+\subsection{Estado Inicial}
+ Tabuleiro com alguns números pre estabelecidos.
+%-----------------------------------
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=4cm]{sudoku.png}
+   \caption{Figura demostração do problema}
+   \label{fig:sudoku} 
+\end{figure}
+%----------------------------------------
+ 
+%_________
+\subsection{Ações}
+ \textbf{ inserir números de 1 a 9}, Nas casas vazias, respeitando de modo que não se repitam, na vertical e na horizontal, e dentro do próprio quadrado.
+
+%_________
+\subsection{Modelo de Transição}
+    \textbf{ checar não se repete}  Antes de colocar o número não está na horizontal, na vertical, e no quadrado
+
+%_________
+\subsection{Custo de Caminho}
+    Dependendo da dificuldade até 56 movimentos.
+%_________
+\subsection{Teste do Objetivo}
+Se a soma na horizontal der 45 e na horizontal der 45, e a soma dos números no quadrado der 45,  está correto. 
+
+
+%###################
+
+%----------------------------------
+\section{Considerações Finais}
+%----------------------------------
+Este trabalho teve a pretensão de apresentar quatro problemas e analisar sua resolução do ponto de vista da inteligência artificial, perante a perspectiva simplória deste que vós escreve, mostrando que a computação clássica ainda é preza em suas bases, pois a computação quântica no qual esses problemas são muito mais simples ainda não se iniciou essa era, e que nós ainda não estamos prontos para tamanho avanço. 
+
+Permanece perante todos o mistério que esses problemas, muitos outros sempre irão ter soluções mais eficientes, mas que estão limitadas a nosso conhecimento atual, visto que ainda a ciência cada dia mais evolui, mas nunca chegará a exatidão, pois essa, só pertence a fonte de tudo.  
+%###################
+
+%-------------------
+\section{Referencias Blibiográficas}
+%-----------------------------
+
+%TÍTULO da matéria. Nome do site, ano. Disponível em: . Acesso em: dia, mês e ano.
+CANIBAIS E MISSIONARIOS .Wikipedia. 2011. Disponivel em: 
+\url{https://pt.wikipedia.org/wiki/Problema_dos_canibais_e_mission%C3%A1rios}
+
+
+
+COMO SOLUCIONAR O CUBO MÀGICO. WikiHow. 2011. Disponivel em: 
+\url{https://pt.wikihow.com/Resolver-um-Cubo-M%C3%A1gico}
+
+
+O PROBLEMA DAS N-RAINHAS.  Ricardo Rocha. 2010. Disponivel em:
+\url{https://www.dcc.fc.up.pt/~ricroc/aulas/0405/soII/prat/exerc2.html}
+
+
+SUDOKU ONLINE . sudoku.com. 2020. Disponivel em:
+\url{https://sudoku.com/br}
+
+
+%-------------------------------------------
+\end{document}
