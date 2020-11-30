@@ -1,0 +1,117 @@
+%   Universidade Tuiuti Do Paraná      
+%   Ciencia da Computação
+%   Inteligencia Artficial
+%   Professor: CHAUA COLUENE QUEIROLO BARBOSA DA SILVA
+%   Aluno: Arion Denovaro
+%-------------------------------------------------------
+% 
+
+% tipo de documento artigo
+\documentclass[12pt,a4paper,twocolumn]{article}
+
+%Blibiotecas 
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[caption=false]{subfig}
+\usepackage{graphicx} %use de imgs
+\usepackage{natbib}
+\usepackage{hyperref}
+
+\title{Resumo do Artigo: Uso de raciocínio probabilístico para inferir os  estados de ânimo do aluno no ambiente ROODA }
+\date{27/11/2020}
+\author{Arion Denovaro  \\ \texttt  arion.barberi@utp.edu.br}
+
+%-------incio-do-artigo-------------------
+\begin{document}
+\maketitle
+% cria uma pagina em branco 
+\newpage  
+
+
+%------------------------------
+\section{Introdução}
+%-----------------------------
+O estudo procura identificar e categorizar as sensações e sentimentos dos alunos, durante o uso do sistema de aprendizagem online(conhecidos como AVA - Ambiente Virtual de Aprendizagem), sendo eles positivos ou não, com a finalidade de promover melhor sensação de conforto, uma vez que se percebe que as relações afetivas e emocionais estabelecem vínculos bem estruturados, com isso favorecendo melhor aprendizado. 
+
+
+Principal conceito do estudo é com tais dados, seja possível criar uma ferramenta pedagógica mais adequadas para desenvolvimento profissional dos alunos, os dados foram coletados através do raciocínio probabilístico, usando-se redes bayesianas.
+
+
+%------------------------------
+\section{Fundamentação Téorica}
+%-----------------------------
+O estudo foi fundamentado em grandes nomes da pisicologia, se valendo de suas contribuições, com a finalidade de moldar a pesquisa, \textit{ Jean Piaget} que fundou a \textbf{ Epistemologia Genética}, que categorizou o aprendizado do individuo em 4 etapas: 
+1. Maturação do sistema nervoso central
+2. Experiências físicas e lógico-matemáticas.
+3. Transmissão social.
+4. Equilibração das estruturas cognitivas. 
+\\
+Outro estudioso que foi usado para teoria do conhecimento com base no estudo da gênese psicológica do pensamento humano,\textit{ Lev Vygotsky} pisicologo que propos a \textbf{psicologia cultural histórica}, que leva em consideração o ambiente cultural, social na aprendizagem do individuo, como ser evolutivo em seu aprendizado.
+
+O autor detectou duas modalidades de reação e interação: mútua e reativa, a primeira de mostra as relações independentes do processo do individuo, a segunda segue a ação acompanhado da reação do individuo aos estímulos externos e internos, complementando que os mesmos não estavam somente usufruindo do ambiente online.
+
+
+Seguindo tal linha a computação afetiva usa-se de técnicas da Inteligencia Artificial, Engenharia de Software, focadas na afetividade humana, porem não é algo simples de modelar as emoções em um ambiente informatizado, tal fato devido ao \textbf{Pensamento Cartesiano}, valendo-se do lado lógico, ignorando as reações afetivas dos seres, outro grande obstáculo são as diferentes teorias da psicologia para chegar-se a uma concessão sobre as emoções do ser.
+
+As emoções nem sempre são afetividades, é um estado emotivo breve, de resposta imediata a um acontecimento, podem ser classificadas como primairia (primitiva) e secundaria (scoial), mas primarias estão ligadas ao instinto primitivo de sobrevivencia presentes em todos os animais (medo, raiva, tristeza, alegria, surpresa, desprezo e aversão), herdado de nossos antepassados primatas, emoções secundárias (arrogância, preocupação, inquietação, mágoa, entusiasmo, espanto, repulsa) vem do convivio social do ser.
+
+Os estados de emoções podem dermarcar a personalidade do individuo, de modo que o ser percebe a realidade em seu ambiente, tal elemetos são detectados por um teste psicométricos.
+
+
+
+%------------------------------
+\section{Análise do problema}
+%------------------------------
+A proposta de um modelo afetivo eficaz, encontrada pelos pesquisadores leva-se em consideração o estado emocional do individuo, encontra-se dessa forma:
+Estado de animo: Subordinatividade afetiva, traços da personalidade, fatores motivacionais, sistema fisiológico, expressão motora, estado motivacional, sentimento subjetivo.
+A subjetividade afetiva é destacada através do framework AWM (Affective Word Mining), o qual tem por objetivo identificar e classificar as palavras de conotação afetiva presentes em um texto. Para esse efeito, o processo de mineração extrai os lexemas com as palavras afetivas, que são submetidos a uma classificação. A classificação consiste em verificar a qual posição da Roda dos Estados Afetivos (REA) cada lexema se insere .
+
+Para cada ação realizada pelo aluno, foi atribuído um atributo que é usado para se medir a motivações, número de acessos, quantidade de respostas no fórum, pedidos de ajuda ao professor, tempo que ficou no portal, O grau motivacional é inferido pelo framework BFC (Behavioral Factor Calculation).
+
+Além disso foi levado 3 variáveis para compor esse sistema(personalidade, motivação, influência do texto).
+
+%----------------------------------
+\section{Resultados experimentais}
+%----------------------------------
+
+Foi coletado dados de 8 alunos, de duas disciplinas do curso de graduação em Pedagogia da UFRGS, os dados da personalidade foram adqueridos através de um questionário.
+
+Identificado que os 2 alunos A e B não demostraram textos com envolvimento positivo, e outros 2, C e D alunos foram altamente influenciados pelo conteúdo do texto.
+
+Os alunos A e B demostram mais difíceis de detectar suas emoções, mas demostraram através do teste, relativamente bem motivados , o aluno C razoavelmente desmotivado em função da maneira como se comportou no ambiente, os traços de personalidade desse aluno confirmam a tendência negativa quanto à motivação, esse aluno demonstra um traço de personalidade conhecido como desejabilidade social. O participante tende a dissimular sua opinião ou seu comportamento, por considerá-los socialmente não aceitos. Isso pode esclarecer por que a máquina de inferência decidiu por um estado de ânimo “mais favorável” à aprendizagem em relação a um aluno pouco motivado (em relação aos colegas).
+
+O aluno D revela um comportamento semelhante ao C, mas com baixa desejabilidade social. Conclui-se, portanto, que o aluno mostrou-se realmente entusiasmado com a disciplina. Para os demais alunos, a máquina de inferência forneceu resultados conforme a expectativa. 
+%----------------------------------
+\section{Considerações Finais}
+%----------------------------------
+
+Detectar estados emocionais, envolve detectar sinais, que mais tarde viram dados, com isso foi convertido em um sistema informatizado, para se descobrir quais emoções ser passou durante o uso do ambiente de aprendizagem online.
+
+Mesmo com os esforços não foi possível mensurar com precisão o quadro emocional dos alunos, estima-se para ter maior precisão em um futuro experimento deve-se usar o raciocínio probabilístico implementado através de redes bayesina.
+
+O objetivo da pesquisa é o de construir um sistema computacional adaptativo ao aluno, de modo que favoreça a manter motivado aprender, em usar o AVA,
+como tal, a par de diferentes potencialidades, deve-se propiciar discussões quanto a se as dificuldades encontradas decorrem de insuficiências tecnológicas ou pedagógicas, ou ainda, se resultam de  outros, motivos  como os de natureza individual, sendo muito difícil prever as emoções do aluno, pois esta sujeito a diversos fatores e variáveis, ao contrário de uma maquina que é mais previsível, por ter estados lógicos matematicos.
+
+
+%-----------------------------------------
+\section{Referencias Blibiográficas}
+%-----------------------------
+
+%TÍTULO da matéria. Nome do site, ano. Disponível em: . Acesso em: dia, mês e ano.
+Jean Piaget 2011 ,wikipedia.org  . Disponivel em: 
+\url{https://pt.wikipedia.org/wiki/Jean_Piaget} Acesso em 27/11/2020
+
+
+Lev Vygotsky 2011 ,wikipedia.org  . Disponivel em: 
+\url{https://pt.wikipedia.org/wiki/Lev_Vygotsky} Acesso em 27/11/2020
+
+
+Psicologia cultural-histórica 2012 ,wikipedia.org  . Disponivel em: 
+\url{https://pt.wikipedia.org/wiki/Psicologia_cultural-hist%C3%B3rica} Acesso em 27/11/2020
+
+Resumo do artigo: Uso de raciocínio probabilístico para inferir os  estados de ânimo do aluno no ambiente ROODA ,2011 , Disponivel em: 
+\url{https://seer.ufrgs.br/cadernosdeinformatica/article/download/v6n1p87-94/11729} Acesso em 27/11/2020
+
+%-------------------------------------------
+\end{document}
